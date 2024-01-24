@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: black;
+                color: white
+            };
+
+        </style>
+    </head>
+    <body>
+        <h2>Fetched: </h2>
+        <!-- print fetched data on page: -->
+        Title: <%= locals.query.products[0].title || "Default"%><br>
+        Description: <%= locals.query.products[0].description || "Default"%><br>
+
+        <% const presale_price = query.products[0].price/(1-query.products[0].discountPercentage/100) %>
+        <% const final_price = presale_price.toFixed(2) %>
+        Final price: <%= final_price %>
+    </body>
+</html>
